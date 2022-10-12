@@ -48,8 +48,6 @@
 > The main data for this task is a text corpus of which the context was a news data context. The data was comprised of mostly news sentences that were written in the Amharic language.
 
 > This data is publicly available and can be found [here](https://github.com/IsraelAbebe/An-Amharic-News-Text-classification-Dataset). as a CSV file.
->
-> Docker and Docker compose
 > 
 > You can also read a brief description of the data [here](https://arxiv.org/pdf/2103.05639.pdf).
 
