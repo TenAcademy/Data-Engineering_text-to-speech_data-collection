@@ -18,7 +18,7 @@ import boto3
 
 default_args = {
     # 'start_date': days_ago(5),
-    'owner': 'f0x tr0t',
+    'owner': 'f0x_tr0t',
     'depends_on_past': False,
     'email': ['fisseha.137@gmail.com'],
     'email_on_failure': False,
@@ -37,7 +37,7 @@ RAW_DATA_TOPIC = 'g1-raw-text-data-topic'
 
 # define the DAG
 etl_dag = DAG(
-    'KAFKA_CLUSTERS_end_to_end_data_pipeline',
+    'speech-collection.Kafka',
     default_args=default_args,
     start_date=datetime(2022, 10, 1),
     description='An end to end data pipeline for week 7 of 10 academy project',
@@ -104,6 +104,7 @@ def put_raw_data_to_S3(ti):
 
     real_S3bucket = "/mnt/10ac-batch-6/notebooks/g1-dlk"
     S3bucket = "./s3bucket/"
+    data_folder = "./data/"
     file_name = datetime.now().strftime("%Y%m%d-%H%M%S") + ".csv"
     print('putting raw data to S3 bucket . . .')
     df_raw_data.to_csv(S3bucket + file_name, index=False)
